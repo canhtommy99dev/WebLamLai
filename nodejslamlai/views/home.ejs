@@ -38,7 +38,10 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
+    const preObject = document.getElementById('object');
 
+const databaseObject = firebase.database.ref().child('message');
+databaseObject.on('value',snap => console.log(snap.val()))
   </script>
   <script src="js/index.js"></script>
 
