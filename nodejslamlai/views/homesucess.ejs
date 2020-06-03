@@ -9,8 +9,10 @@
 <body>
     <div id="user_div" class="loggedin-div">
         <h3>Welcome User</h3>
-        <p id="user_paracccc">Welcome to Firebase web login Example. You're currently logged in.</p>
+        <p id="getuserdata">Welcome to Móng Cái Ship.</p>
         <button onclick="logout()">Logout</button>
+        <br>
+        <button onclick="databaseGelLink()">Database Khách Đặt</button>
       </div>
       <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
   <script>
@@ -27,7 +29,6 @@
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
 
   </script>
   <script src="js/firebaseAuth.js"></script>

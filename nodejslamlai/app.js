@@ -40,6 +40,10 @@ app.get('/resultcc',function(req,res){
     res.render('webch.ejs')
 })
 
+app.get('/database',function(req,res){
+    res.render('database.ejs')
+})
+
 app.post('/',function(req,res){
     console.log(req.body.breakfast);
     var breakfast = req.body.breakfast;

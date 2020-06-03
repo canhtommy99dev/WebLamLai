@@ -10,18 +10,27 @@ firebase.auth().onAuthStateChanged(function(user) {
     if(user != null){
 
       var email_id = user.email;
-      document.getElementById("user_paracccc").innerHTML = "Welcome User : " + email_id;
+      document.getElementById("getuserdata").innerHTML = "Welcome User : " + email_id;
+      user.providerData.forEach(function (profile) {
+        console.log("Sign-in provider: " + profile.providerId);
+        console.log("  Provider-specific UID: " + profile.uid);
+        console.log("  Name: " + profile.displayName);
+        console.log("  Email: " + profile.email);
+        console.log("  Photo URL: " + profile.photoURL);
+      });
     }
 
   } else {
     // No user is signed in.
 
-    document.getElementById("user_div").style.display = "none";
-    document.getElementById("login_div").style.display = "block";
+    location.replace("/");
 
   }
 });
 function logout(){
   firebase.auth().signOut();
   location.replace("/");
+}
+function databaseGelLink(){
+  location.replace('/database');
 }
