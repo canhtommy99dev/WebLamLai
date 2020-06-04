@@ -39,6 +39,9 @@ app.get('/homesucess',function(req,res){
 app.get('/resultcc',function(req,res){
     res.render('webch.ejs')
 })
+app.get('/testmmm',function(req,res){
+    res.render('dataList.ejs')
+})
 
 app.get('/database',function(req,res){
     res.render('database.ejs')

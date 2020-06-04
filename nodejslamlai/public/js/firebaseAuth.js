@@ -34,3 +34,6 @@ function logout(){
 function databaseGelLink(){
   location.replace('/database');
 }
+function databaseTest(){
+  location.replace('/testmmm');
+}
