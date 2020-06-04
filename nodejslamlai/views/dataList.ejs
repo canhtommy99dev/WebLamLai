@@ -4,76 +4,263 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="pidie-0.0.8.css" rel="stylesheet"/>
+    <!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
     <title>Data Khách Hàng</title>
+    <style>
+        .btnautommmm{
+            margin: 70px;
+            border: 1px solid #4CAF50;
+        }
+    </style>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign Out</button>
+        </div>
+      </nav>
     <div class="pd-container">
         <div class="pd-row">
             <div class="pd-col-md-3">
 
             </div>
-            <div class="pd-col-md-9">
-                <div class="pd-horizontal-filter">
-                    <a href="#" class="pd-button-grid"><span class="pd-icon">View Module</span></a>
-                    <a href="#" class="pd-button-list"><span class="pd-icon">View Module</span></a>
-                    <input type="search" class="id-input-fitler" placeholder="Search Item"/>
-                </div>
                 <div class="pd-filter pd-filter-grid pd-row">
                     <div class="pd-list-grid pd-col-md-4">
                         <div class="pd-card">
-                            <img src="https://kenh14cdn.com/thumb_w/640/2020/3/10/125920-ngoc-trinh-tuot-mat-danh-hieu-dep-khong-ti-vet-vi-loat-khuyet-diem-nay6-15838436929521714781923-crop-1583843723906548836325.jpg" alt="">
+                            <img src="" id="imageTryenVao" class="pd-card-img-top">
                             <div class="pd-card-body">
-                                <b class="pd-card-title">Product 1</b>
-                                <p class="pd-card-text pd-text-orange">10000đ</p>
+                                <b class="pd-card-title" id="tensanpham">Product 1</b>
+                                <p class="pd-card-text pd-text-orange" id="diachi">10000đ</p>
                             </div>
                             <div class="pd-card-footer pd-text-right">
                                 <button class="pd-button pd-button-danger pd-button-sm">
-                                    <span class="pd-icon"></span>
+                                    <span class="pd-icon">MMMM</span>
                                 </button>
-                            </div>
-                            <div class="pd-card-footer pd-text-right">
                                 <button class="pd-button pd-button-primary pd-button-sm">
-                                    <span class="pd-icon"></span>
+                                    <span class="pd-icon">CCCC</span>
                                 </button>
-                            </div>
-                            <div class="pd-card-footer pd-text-right">
                                 <button class="pd-button pd-button-success pd-button-sm">
-                                    <span class="pd-icon"></span>
+                                    <span class="pd-icon">KKKK</span>
                                 </button>
                             </div>
                         </div>
                     </div>
                     <div class="pd-list-grid pd-col-md-4">
                         <div class="pd-card">
-                            <img src="https://kenh14cdn.com/thumb_w/640/2020/3/10/125920-ngoc-trinh-tuot-mat-danh-hieu-dep-khong-ti-vet-vi-loat-khuyet-diem-nay6-15838436929521714781923-crop-1583843723906548836325.jpg" alt="">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Aspect_ratio_4_3_example.jpg" class="pd-card-img-top">
                             <div class="pd-card-body">
                                 <b class="pd-card-title">Product 1</b>
                                 <p class="pd-card-text pd-text-orange">10000đ</p>
                             </div>
                             <div class="pd-card-footer pd-text-right">
                                 <button class="pd-button pd-button-danger pd-button-sm">
-                                    <span class="pd-icon"></span>
+                                    <span class="pd-icon">MMMM</span>
                                 </button>
-                            </div>
-                            <div class="pd-card-footer pd-text-right">
                                 <button class="pd-button pd-button-primary pd-button-sm">
-                                    <span class="pd-icon"></span>
+                                    <span class="pd-icon">CCCC</span>
                                 </button>
-                            </div>
-                            <div class="pd-card-footer pd-text-right">
                                 <button class="pd-button pd-button-success pd-button-sm">
-                                    <span class="pd-icon"></span>
+                                    <span class="pd-icon">KKKK</span>
                                 </button>
                             </div>
                         </div>
                     </div>
+                    <div class="pd-list-grid pd-col-md-4">
+                        <div class="pd-card">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Aspect_ratio_4_3_example.jpg" class="pd-card-img-top">
+                            <div class="pd-card-body">
+                                <b class="pd-card-title">Product 1</b>
+                                <p class="pd-card-text pd-text-orange">10000đ</p>
+                            </div>
+                            <div class="pd-card-footer pd-text-right">
+                                <button class="pd-button pd-button-danger pd-button-sm">
+                                    <span class="pd-icon">MMMM</span>
+                                </button>
+                                <button class="pd-button pd-button-primary pd-button-sm">
+                                    <span class="pd-icon">CCCC</span>
+                                </button>
+                                <button class="pd-button pd-button-success pd-button-sm">
+                                    <span class="pd-icon">KKKK</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pd-list-grid pd-col-md-4">
+                        <div class="pd-card">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Aspect_ratio_4_3_example.jpg" class="pd-card-img-top">
+                            <div class="pd-card-body">
+                                <b class="pd-card-title">Product 1</b>
+                                <p class="pd-card-text pd-text-orange">10000đ</p>
+                            </div>
+                            <div class="pd-card-footer pd-text-right">
+                                <button class="pd-button pd-button-danger pd-button-sm">
+                                    <span class="pd-icon">MMMM</span>
+                                </button>
+                                <button class="pd-button pd-button-primary pd-button-sm">
+                                    <span class="pd-icon">CCCC</span>
+                                </button>
+                                <button class="pd-button pd-button-success pd-button-sm">
+                                    <span class="pd-icon">KKKK</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pd-list-grid pd-col-md-4">
+                        <div class="pd-card">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Aspect_ratio_4_3_example.jpg" class="pd-card-img-top">
+                            <div class="pd-card-body">
+                                <b class="pd-card-title">Product 1</b>
+                                <p class="pd-card-text pd-text-orange">10000đ</p>
+                            </div>
+                            <div class="pd-card-footer pd-text-right">
+                                <button class="pd-button pd-button-danger pd-button-sm">
+                                    <span class="pd-icon">MMMM</span>
+                                </button>
+                                <button class="pd-button pd-button-primary pd-button-sm">
+                                    <span class="pd-icon">CCCC</span>
+                                </button>
+                                <button class="pd-button pd-button-success pd-button-sm">
+                                    <span class="pd-icon">KKKK</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pd-list-grid pd-col-md-4">
+                        <div class="pd-card">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Aspect_ratio_4_3_example.jpg" class="pd-card-img-top">
+                            <div class="pd-card-body">
+                                <b class="pd-card-title">Product 1</b>
+                                <p class="pd-card-text pd-text-orange">10000đ</p>
+                            </div>
+                            <div class="pd-card-footer pd-text-right">
+                                <button class="pd-button pd-button-danger pd-button-sm">
+                                    <span class="pd-icon">MMMM</span>
+                                </button>
+                                <button class="pd-button pd-button-primary pd-button-sm">
+                                    <span class="pd-icon">CCCC</span>
+                                </button>
+                                <button class="pd-button pd-button-success pd-button-sm">
+                                    <span class="pd-icon">KKKK</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pd-list-grid pd-col-md-4">
+                        <div class="pd-card">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Aspect_ratio_4_3_example.jpg" class="pd-card-img-top">
+                            <div class="pd-card-body">
+                                <b class="pd-card-title">Product 1</b>
+                                <p class="pd-card-text pd-text-orange">10000đ</p>
+                            </div>
+                            <div class="pd-card-footer pd-text-right">
+                                <button class="pd-button pd-button-danger pd-button-sm">
+                                    <span class="pd-icon">MMMM</span>
+                                </button>
+                                <button class="pd-button pd-button-primary pd-button-sm">
+                                    <span class="pd-icon">CCCC</span>
+                                </button>
+                                <button class="pd-button pd-button-success pd-button-sm">
+                                    <span class="pd-icon">KKKK</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
     <script src="pidie-0.0.8.js"></script>
+
   <script>
     var pidie = new Pidie();
+  </script>
+  <script>
+    // Initialize Firebase
+    var firebaseConfig = {
+      apiKey: "AIzaSyAZv4pJi5HHFHet61Jmmln9hxALCJDv_ec",
+      authDomain: "mongcaifoodymcbyfanpage.firebaseapp.com",
+      databaseURL: "https://mongcaifoodymcbyfanpage.firebaseio.com",
+      projectId: "mongcaifoodymcbyfanpage",
+      storageBucket: "mongcaifoodymcbyfanpage.appspot.com",
+      messagingSenderId: "122111426704",
+      appId: "1:122111426704:web:aa93b3749dab5a0e46d815",
+      measurementId: "G-D2PGHB125N"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    var idc = document.getElementById("id");
+    var emailc = document.getElementById("email");
+    var tencuahangc = document.getElementById("tencuahang");
+    var diachic = document.getElementById("diachi");
+    var sodtc = document.getElementById("sodt");
+    var thoigianc = document.getElementById("thoigian");
+    var linkfacebookc = document.getElementById("linkfacebook");
+    var latitudec = document.getElementById("latitude");
+    var longtitudec = document.getElementById("longtitude");
+    var shipdoc = document.getElementById("shipdo");
+    var danhmucc = document.getElementById("danhmuc");
+    var imageHinhDaiDienc = document.getElementById("imageHinhDaiDien");
+
+    var databaseget = firebase.database().ref().child('CuaHang/DanhSachCuaHang');
+    databaseget.on("child_added", snap => {
+      console.log(snap.val())
+      output.innerHTML = JSON.stringify(snap.val(),null);
+
+      var id = snap.child("id").val();
+      var email = snap.child("email").val();
+      var tencuahang = snap.child("tencuahang").val();
+      var diachi = snap.child("diachi").val();
+      var sodt = snap.child("sodt").val();
+      var thoigian = snap.child("thoigian").val();
+      var linkfacebook = snap.child("linkfacebook").val();
+      var latitude = snap.child("latitude").val();
+      var longtitude = snap.child("longtitude").val();
+      var shipdo = snap.child("shipdo").val();
+      var danhmuc = snap.child("danhmuc").val();
+      var imageHinhDaiDien = snap.child("imageHinhDaiDien").val();
+      tencuahangc.append(id)
+      diachic.append(diachi)
+    });
   </script>
 
 </body>
