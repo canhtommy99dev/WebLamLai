@@ -44,11 +44,11 @@ app.get('/database',function(req,res){
     res.render('database.ejs')
 })
 
-app.post('/',function(req,res){
-    console.log(req.body.breakfast);
-    var breakfast = req.body.breakfast;
-    res.render('result.ejs',{data:breakfast})
-})
+app.post('/resultcc',function(req,res){
+    console.log(req.body.breakfastccc);
+    var breakfastccc1 = req.body.breakfastccc
+    res.render("result.ejs",{data:breakfastccc1})
+});
 
 app.listen(port,function(){
     console.log("App run port"+ port)

@@ -54,8 +54,6 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
 
-
-    var xxxxx = document.getElementById("xxxxx");
     var idc = document.getElementById("id");
     var emailc = document.getElementById("email");
     var tencuahangc = document.getElementById("tencuahang");
@@ -72,6 +70,8 @@
     var databaseget = firebase.database().ref().child('CuaHang/DanhSachCuaHang');
     databaseget.on("child_added", snap => {
       console.log(snap.val())
+      output.innerHTML = JSON.stringify(snap.val(),null);
+
       var id = snap.child("id").val();
       var email = snap.child("email").val();
       var tencuahang = snap.child("tencuahang").val();
@@ -84,10 +84,10 @@
       var shipdo = snap.child("shipdo").val();
       var danhmuc = snap.child("danhmuc").val();
       var imageHinhDaiDien = snap.child("imageHinhDaiDien").val();
-      xxxxx.append(id); // cai này của tbody xxx
+      idc.append(id)
     });
   </script>
-  <button onclick="writeUserData()">Hello</button>
+  <button onclick="writeData()">Hello</button>
 
   <table id="customers">
     <thead>
@@ -107,7 +107,20 @@
       </tr>
     </thead>
     <tbody>
-      
+      <tr>
+        <td id="id"></td>
+        <td id="email"></td>
+        <td id="tencuahang"></td>
+        <td id="diachi"></td>
+        <td id="sodt"></td>
+        <td id="id"></td>
+        <td id="thoigian"></td>
+        <td id="latitude"></td>
+        <td id="longtitude"></td>
+        <td id="shipdo"></td>
+        <td id="danhmuc"></td>
+        <td id="imageHinhDaiDien"></td>
+      </tr>
     </tbody>
 
   </table>
